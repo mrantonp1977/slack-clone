@@ -131,19 +131,19 @@ export const get = query({
               const existingReaction = acc.find((r) => r.value === reaction.value);
 
               if (existingReaction) {
-                existingReaction.membersIds = Array.from(new Set([...existingReaction.membersIds, reaction.memberId])
+                existingReaction.memberIds = Array.from(new Set([...existingReaction.memberIds, reaction.memberId])
                 );
               } else {
                 acc.push({
                   ...reaction,
-                  membersIds: [reaction.memberId],
+                  memberIds: [reaction.memberId],
                 });
               }
               return acc;
             }, 
             [] as(Doc<"reactions"> & {
               count: number;
-              membersIds: Id<"members">[];
+              memberIds: Id<"members">[];
             })[]);
 
             const reactionsWithoutMemberIdProperty = debudedReactions.map(({ memberId, ...rest}) => rest);
