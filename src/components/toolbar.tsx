@@ -9,7 +9,7 @@ interface ToolbarProps {
   handleEdit: () => void;
   handleThread: () => void;
   handleDelete: () => void;
-  handleReaction: () => void;
+  handleReaction: (value: string) => void;
   hideThreadButton?: boolean;
 }
 
@@ -27,7 +27,7 @@ export const Toolbar = ({
       <div className="group-hover:opacity-100 opacity-0 transition-opacity border bg-white rounded-md shadow-sm">
         <EmojiPopover
           hint="Add reaction"
-          onEmojiSelect={(emoji) => handleReaction()}
+          onEmojiSelect={(emoji) => handleReaction(emoji.native)}
         >
           <Button variant="ghost" size="iconSm" disabled={isPending}>
             <Smile className="size-4" />
