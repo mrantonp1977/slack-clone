@@ -12,7 +12,7 @@ import { WorkspaceHeader } from './workspace-header';
 import { SidebarItem } from './sidebar-item';
 import { useGetChannels } from '@/features/channels/api/use-get-channels';
 import { WorkspaceSection } from './WorkspaceSection';
-import { useGetMembers } from '@/features/menbers/api/use-get-member';
+import { useGetMembers } from '@/features/menbers/api/use-get-members';
 import { UserItem } from './user-item';
 import { useCreateChannelModal } from '@/features/channels/store/use-create-channel-modal';
 import { useChannelId } from '@/hooks/use-channel-id';
